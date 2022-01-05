@@ -47,12 +47,12 @@ Sistema web para listar e cadastrar usuários.
 #### Node
 - #### Instalação no Windows
 
-  Basta acessar [site oficial do Node.js](https://nodejs.org/) e fazer o download do instalador.
-Além disso, certifique-se de ter `git` disponível em seu PATH,` npm` pode precisar (você pode encontrar git [aqui](https://git-scm.com/)).
+  Basta acessar o [site oficial do Node.js](https://nodejs.org/) e fazer o download do instalador.
+Além disso, certifique-se de ter `git` disponível em seu PATH, `npm` pode precisar (você pode encontrar o git [aqui](https://git-scm.com/)).
 
 - ##### Instalação no Ubuntu
 
-  Você pode instalar nodejs e npm facilmente com apt install, basta executar os seguintes comandos.
+  Você pode instalar o nodejs e o npm facilmente com apt install, basta executar os seguintes comandos.
 
       $ sudo apt install nodejs
       $ sudo apt install npm
@@ -68,7 +68,7 @@ Se a instalação foi bem-sucedida, você deve ser capaz de executar o seguinte 
     $ npm --version
     7.24.0
 
-Se você precisa atualizar o `npm`, pode fazê-lo usando` npm`! Legal, certo? Depois de executar o seguinte comando, basta abrir novamente a linha de comando e ser feliz.
+Se você precisa atualizar o `npm`, pode fazê-lo usando `npm`! Legal, certo? Depois de executar o seguinte comando, basta abrir novamente a linha de comando e ser feliz.
 
     $ npm install npm -g
 
@@ -104,13 +104,13 @@ Para rodar o backend, vá até a pasta /backend e execute
 
     $ npm run server
 
-Para rodar o backend, vá até a pasta /frontend e execute
+Para rodar o frontend, vá até a pasta /frontend e execute
 
     $ npm start
 
 Ou vá até a pasta /backend e execute
 
-    $ npm run cliente
+    $ npm run client
 
 <!-- USAGE EXAMPLES -->
 ## Como usar
