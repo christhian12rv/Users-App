@@ -1,0 +1,28 @@
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../public/img/background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.users-list-container, .users-list-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+}
+
+.users-register-form {
+    display: flex;
+    gap: 1em;
+}
+
+@media screen and (min-width: 768px) {
+    .users-list-container {
+        min-width: 500px;
+    }
+}

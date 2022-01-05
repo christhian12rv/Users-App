@@ -4,9 +4,9 @@ exports.list = async (req, res) => {
     const { filter } = req.query || '';
     try {
         const users = await UserModel.find({ name: { $regex: filter, $options: 'i' } }).lean();
-        res.json(users);
+        res.json({ users });
     } catch (error) {
-        res.sendStatus(500);
+        res.status(500).send({ message: 'Houve um erro interno.' });
     }
 }
 
@@ -17,6 +17,6 @@ exports.register = async (req, res) => {
         await newUser.save();
         res.json({ newUser, message: 'Usuário cadastrado com sucesso!' });
     } catch (error) {
-        res.sendStatus(500);
+        res.status(500).send({ message: 'Houve um erro interno.' });
     }
 }
