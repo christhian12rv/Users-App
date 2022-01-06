@@ -1,23 +1,52 @@
 .users-table {
+    display: block;
     border-collapse: collapse;
     border-spacing: 10px;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    border-radius: 1em;
+    border-radius: .5em;
     width: 100%;
+    max-width: 600px;
     height: 100%;
-    padding: 1em;
-    overflow: hidden;
+    max-height: 50vh;
+    padding: 1em 0;
+    overflow: auto;
+}
+
+.users-table::-webkit-scrollbar {
+    width: 4px;
+}
+
+.users-table::-webkit-scrollbar-track {
+    background-color: trasnparent;
+}
+
+.users-table::-webkit-scrollbar-thumb {
+    background-color: #7171b7;
+    border-radius: 20px;
+}
+
+.users-table thead {
+    width: calc( 100% - 1em );
+}
+
+.users-table thead tr th {
+    text-align: left;
+}
+
+.users-table tbody tr td {
+    word-break: break-all;
 }
 
 .users-table thead tr th, .users-table tbody tr td {
     padding: .5em 1em;
 }
 
-.users-table tbody tr:hover, .users-table tbody tr:hover td {
-    background: rgba(255, 255, 255, 0.25);
+.users-table thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
 }
 
-.users-table thead tr th {
-    text-align: left;
+.users-table tbody tr:hover, .users-table tbody tr:hover td {
+    background: rgba(255, 255, 255, 0.25);
 }

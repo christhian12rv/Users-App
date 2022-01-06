@@ -26,6 +26,17 @@ function App() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (inputRegister.length < 2)
+	return toast.error('O nome do usuário deve conter no mínimo 2 caracteres', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+
     const response = await fetch('/users/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -34,6 +45,7 @@ function App() {
       })
     });
     const data = await response.json();
+
     if (response.status == 200)
       toast.success(data.message, {
         position: 'top-right',
