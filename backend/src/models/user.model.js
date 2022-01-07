@@ -1,12 +1,12 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const con = require('../configs/db');
 
-const User = new Schema({
-    name: {
-        type: String,
-        minLength: 2,
-        required: true
-    }
-}, { timestamps: true });
+async function createTable() {
+    const [rows] = await con.query(`CREATE TABLE IF NOT EXISTS users(
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(300) NOT NULL
+    )`
+    );
+    return rows;
+}
 
-module.exports = mongoose.model("users", User);
+module.exports = createTable();

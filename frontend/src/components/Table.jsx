@@ -14,7 +14,7 @@ const Table = ({ users }) => {
             <tbody>
                 {users.map(user => (
                     <tr>
-                        <td>{user._id}</td>
+                        <td>{user.id}</td>
                         <td>{user.name}</td>
                     </tr>
                 ))}

@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
+const db = require('./configs/db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = 5000;
@@ -10,10 +10,8 @@ const usersRoute = require('./routes/users.route');
 app.use(bodyParser.json());
 app.use(cors());
 
-mongoose.connect('mongodb://localhost/users-app', (error) => {
-    if (!error)
-        console.log('Conectado ao MongoDB')
-})
+db.conn();
+db.createUsersTable();
 
 app.use('/users', usersRoute);
 

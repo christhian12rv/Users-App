@@ -1,10 +1,12 @@
-const UserModel = require('../models/user.model');
+const { conn } = require('../configs/db');
 
 exports.list = async (req, res) => {
     const { filter } = req.query || '';
     try {
-        const users = await UserModel.find({ name: { $regex: filter, $options: 'i' } }).lean();
-        res.json({ users });
+        const con = await conn();
+        const [rows] = await con.query(`SELECT * FROM users WHERE name LIKE "%${filter}%"`);
+        con.end();
+        res.json({ users: rows });
     } catch (error) {
         res.status(500).send({ message: 'Houve um erro interno.' });
     }
@@ -13,9 +15,10 @@ exports.list = async (req, res) => {
 exports.register = async (req, res) => {
     const { name } = req.body;
     try {
-        const newUser = new UserModel({ name });
-        await newUser.save();
-        res.json({ newUser, message: 'Usuário cadastrado com sucesso!' });
+        const con = await conn();
+        const [rows] = await con.query(`INSERT INTO users(name) VALUES("${name}")`);
+        con.end();
+        res.json({ newUser: { id: rows.insertId, name }, message: 'Usuário cadastrado com sucesso!' });
     } catch (error) {
         res.status(500).send({ message: 'Houve um erro interno.' });
     }
