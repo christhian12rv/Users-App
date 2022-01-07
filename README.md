@@ -34,7 +34,7 @@ Sistema web para listar e cadastrar usuários.
 
 * NodeJs
 * Express
-* MongoDB
+* MySQL
 * React
 
 
