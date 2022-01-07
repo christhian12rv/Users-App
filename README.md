@@ -96,7 +96,7 @@ Se você precisa atualizar o `npm`, pode fazê-lo usando `npm`! Legal, certo? De
 
 
 ### Rodando o projeto
-Primeiramente, altere as configurações do seu banco de dados no arquivo backend/src/configs/db.js
+Primeiramente, crie um banco de dados no mysql e altere as configurações do seu banco de dados no arquivo backend/src/configs/db.js
    ```sh
   host: 'SEU HOST', //Exemplo: localhost
   user: 'SEU USUÁRIO', //Exemplo: root
