@@ -96,6 +96,13 @@ Se você precisa atualizar o `npm`, pode fazê-lo usando `npm`! Legal, certo? De
 
 
 ### Rodando o projeto
+Primeiramente, altere as configurações do seu banco de dados no arquivo backend/src/configs/db.js
+   ```sh
+  host: 'SEU HOST', //Exemplo: localhost
+  user: 'SEU USUÁRIO', //Exemplo: root
+  password: 'SUA SENHA', //Exemplo: 12345678
+  database: 'SEU BANCO DE DADOS' //Exemplo: usersapp
+   ```
 Para rodar o frontend e o backend juntos, vá até a pasta /backend e execute
 
     $ npm run dev

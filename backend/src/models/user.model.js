@@ -1,6 +1,7 @@
-const con = require('../configs/db');
+const { conn } = require('../configs/db');
 
-async function createTable() {
+async function createUsersTable() {
+    const con = await conn();
     const [rows] = await con.query(`CREATE TABLE IF NOT EXISTS users(
         id INT PRIMARY KEY AUTO_INCREMENT,
         name VARCHAR(300) NOT NULL
@@ -9,4 +10,4 @@ async function createTable() {
     return rows;
 }
 
-module.exports = createTable();
+module.exports = { createUsersTable };

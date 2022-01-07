@@ -1,13 +1,12 @@
-
 const mysql = require('mysql2/promise');
 
 async function conn() {
     try {
         const con = await mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: 'c19141300Ccrv',
-            database: 'usersapp'
+            host: 'SEU HOST',
+            user: 'SEU USUÁRIO',
+            password: 'SUA SENHA',
+            database: 'SEU BANCO DE DADOS'
         });
         console.log("Conectou ao MySQL!");
         return con;
@@ -16,16 +15,4 @@ async function conn() {
     }
 }
 
-async function createUsersTable() {
-    const con = await conn();
-    const [rows] = await con.query(`CREATE TABLE IF NOT EXISTS users(
-        id INT PRIMARY KEY AUTO_INCREMENT,
-        name VARCHAR(300) NOT NULL
-    )`);
-    return rows;
-}
-
-module.exports = {
-    conn,
-    createUsersTable
-};
+module.exports = { conn };
